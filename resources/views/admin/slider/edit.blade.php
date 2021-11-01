@@ -36,7 +36,7 @@
 
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Slider Description</label>
-                                    <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"  value="{{ $sliders->description  }}"></textarea>
+                                    <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $sliders->description }}</textarea>
                                 </div>
 
 

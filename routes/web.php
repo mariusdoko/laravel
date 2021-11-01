@@ -15,7 +15,8 @@ Route::get('/email/verify', function () {
 
 Route::get('/', function () {
     $brands = DB::table('brands')->get();
-    return view('home', compact('brands'));
+    $abouts = DB::table('home_abouts')->first();
+    return view('home', compact('brands','abouts'));
 });
 
 Route::get('/about', function () {
@@ -68,6 +69,10 @@ Route::post('/slider/update/{id}', [HomeController::class, 'Update']);
 // Home About all route
 Route::get('/home/About', [AboutController::class, 'HomeAbout'])->name('home.about');
 Route::get('/add/About', [AboutController::class, 'AddAbout'])->name('add.about');
+Route::post('/store/About', [AboutController::class, 'StoreAbout'])->name('store.about');
+Route::get('/about/edit/{id}', [AboutController::class, 'EditAbout']);
+Route::post('/update/homeabout/{id}', [AboutController::class, 'UpdateAbout']);
+Route::get('/about/delete/{id}', [AboutController::class, 'DeleteAbout']);
 
 
 
