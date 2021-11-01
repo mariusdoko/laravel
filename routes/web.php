@@ -67,6 +67,7 @@ Route::post('/slider/update/{id}', [HomeController::class, 'Update']);
 
 // Home About all route
 Route::get('/home/About', [AboutController::class, 'HomeAbout'])->name('home.about');
+Route::get('/add/About', [AboutController::class, 'AddAbout'])->name('add.about');
 
 
 
