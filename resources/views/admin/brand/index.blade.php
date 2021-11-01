@@ -65,13 +65,7 @@
 
                             <form action="{{ route('store.brand') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Brand Name</label>
-                                    <input type="text" name="brand_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                    @error('brand_name')
-                                    <span class="text-danger"> {{ $message }} </span>
-                                    @enderror
-                                </div>
+
 
 
                                 <div class="form-group">
@@ -82,6 +76,14 @@
                                     @enderror
                                 </div>
 
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Brand Name</label>
+                                    <input type="text" name="brand_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    @error('brand_name')
+                                    <span class="text-danger"> {{ $message }} </span>
+                                    @enderror
+                                </div>
 
 
 

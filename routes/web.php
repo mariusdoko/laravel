@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServicesController;
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
@@ -75,8 +76,12 @@ Route::post('/update/homeabout/{id}', [AboutController::class, 'UpdateAbout']);
 Route::get('/about/delete/{id}', [AboutController::class, 'DeleteAbout']);
 
 
-
-
+// Home Services all route
+Route::get('/services/all', [ServicesController::class, 'HomeServices'])->name('home.services');
+Route::post('/services/add', [ServicesController::class, 'StoreServices'])->name('store.services');
+Route::get('/services/edit/{id}', [ServicesController::class, 'Edit']);
+Route::post('/services/update/{id}', [ServicesController::class, 'Update']);
+Route::get('/services/delete/{id}', [ServicesController::class, 'Delete']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -19,9 +19,7 @@
 
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Slider Description</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">
-
-                        </textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Slider Image</label>

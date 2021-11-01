@@ -8,7 +8,7 @@
 
         <div class="container">
             <div class="row">
-<h4>Home Slider</h4>
+<h4>Home Services</h4>
                 <a href="{{ route('add.slider') }}"> <button class="btn btn-info">Add Slider</button> </a>
                 <br><br>
 
