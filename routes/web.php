@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use App\Models\Multipic;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServicesController;
 
@@ -17,7 +19,9 @@ Route::get('/email/verify', function () {
 Route::get('/', function () {
     $brands = DB::table('brands')->get();
     $abouts = DB::table('home_abouts')->first();
-    return view('home', compact('brands','abouts'));
+    $services = DB::table('services')->get();
+    $images = Multipic::all();
+    return view('home', compact('brands','abouts','services','images'));
 });
 
 Route::get('/about', function () {
@@ -82,6 +86,9 @@ Route::post('/services/add', [ServicesController::class, 'StoreServices'])->name
 Route::get('/services/edit/{id}', [ServicesController::class, 'Edit']);
 Route::post('/services/update/{id}', [ServicesController::class, 'Update']);
 Route::get('/services/delete/{id}', [ServicesController::class, 'Delete']);
+// Portfolio Page Route
+Route::get('/portfolio', [PortfolioController::class, 'Portfolio'])->name('portfolio');
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

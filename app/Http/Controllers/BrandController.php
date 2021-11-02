@@ -123,7 +123,7 @@ class BrandController extends Controller
         return Redirect()->back()->with('success','Brand Deleted Successfully');
 
     }
-
+ // THis is for Multi Image All Methods
     public function Multpic (){
         $images = Multipic::all();
         return view('admin.multipic.index',compact('images'));
@@ -155,5 +155,6 @@ class BrandController extends Controller
         Auth::logout();
         return Redirect()->route('login')->with('success','User Logout');
     }
+
 
 }

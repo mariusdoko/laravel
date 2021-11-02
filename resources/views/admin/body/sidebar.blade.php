@@ -59,7 +59,7 @@
 
 
                             <li  class="active" >
-                                <a class="sidenav-item-link" href="">
+                                <a class="sidenav-item-link" href="{{ route('multi.image') }}">
                                     <span class="nav-text">Home Portfolio</span>
 
                                 </a>

@@ -10,6 +10,11 @@ use Auth;
 
 class HomeController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+
+    }
+
     public function HomeSlider() {
         $sliders = Slider::latest()->get();
         return view('admin.slider.index', compact('sliders'));
