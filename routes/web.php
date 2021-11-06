@@ -89,6 +89,19 @@ Route::get('/services/delete/{id}', [ServicesController::class, 'Delete']);
 // Portfolio Page Route
 Route::get('/portfolio', [PortfolioController::class, 'Portfolio'])->name('portfolio');
 
+// Admin Contact Page Route
+Route::get('/admin/contact', [ContactController::class, 'AdminContact'])->name('admin.contact');
+Route::get('/admin/add/contact', [ContactController::class, 'AdminAddContact'])->name('add.contact');
+Route::post('/admin/store/contact', [ContactController::class, 'AdminStoreContact'])->name('store.contact');
+Route::get('/contact/edit/{id}', [ContactController::class, 'Edit']);
+Route::post('/update/contact/{id}', [ContactController::class, 'Update']);
+Route::get('/delete/contact/{id}', [ContactController::class, 'DeleteContact']);
+Route::get('/admin/message', [ContactController::class, 'AdminMessage'])->name('admin.message');
+
+
+// Home contact page route
+Route::get('/contact', [ContactController::class, 'Contact'])->name('contact');
+Route::post('/contact/form', [ContactController::class, 'ContactForm'])->name('contact.form');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
