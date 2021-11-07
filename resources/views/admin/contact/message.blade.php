@@ -44,17 +44,21 @@
                                     <td> {{ $mess->name }} </td>
                                     <td> {{ $mess->email }} </td>
                                     <td> {{ $mess->subject }} </td>
-                                    <td> {{ $mess->message }} </td>
+                                    <td> {{ \Illuminate\Support\Str::limit($mess->message) }} </td>
                                     <td>
-                                        <a href="" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
+                                        <a href="{{ url('view/message/'.$mess->id)}}" class="btn btn-info">View</a>
+
+                                        <a href="{{ url('delete/message/'.$mess->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
 
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
+
                         </table>
 
                     </div>
+
                 </div>
 
 

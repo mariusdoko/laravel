@@ -5,6 +5,7 @@ use App\Models\User;
 use App\Models\Multipic;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ChangePass;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BrandController;
@@ -97,6 +98,9 @@ Route::get('/contact/edit/{id}', [ContactController::class, 'Edit']);
 Route::post('/update/contact/{id}', [ContactController::class, 'Update']);
 Route::get('/delete/contact/{id}', [ContactController::class, 'DeleteContact']);
 Route::get('/admin/message', [ContactController::class, 'AdminMessage'])->name('admin.message');
+Route::get('/view/message/{id}', [ContactController::class, 'View']);
+Route::get('/delete/message/{id}', [ContactController::class, 'DeleteMessage']);
+
 
 
 // Home contact page route
@@ -111,4 +115,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/user/logout', [BrandController::class, 'Logout'])->name('user.logout');
+
+// Change Password and user Profile Route
+Route::get('/user/password', [ChangePass::class, 'CPassword'])->name('change.password');
+Route::post('/password/update', [ChangePass::class, 'UpdatePassword'])->name('password.update');
 

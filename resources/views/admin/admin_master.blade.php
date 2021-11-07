@@ -86,7 +86,7 @@
                     <ul class="nav navbar-nav">
                         <!-- Github Link Button -->
                         <li class="github-link mr-3">
-                            <a class="btn btn-outline-secondary btn-sm" href="https://github.com/tafcoder/sleek-dashboard" target="_blank">
+                            <a class="btn btn-outline-secondary btn-sm" href="https://github.com/mariusdoko/laravel/tree/master" target="_blank">
                                 <span class="d-none d-md-inline-block mr-2">Source Code</span>
                                 <i class="mdi mdi-github-circle"></i>
                             </a>
@@ -136,15 +136,15 @@
                         <!-- User Account -->
                         <li class="dropdown user-menu">
                             <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                                <img src="{{asset('backend/assets/img/user/user.png')}}" class="user-image" alt="User Image" />
-                                <span class="d-none d-lg-inline-block">Abdus Salam</span>
+                                <img src="{{ Auth::user()->profile_photo_url }}" class="user-image" alt="User Image" />
+                                <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <!-- User image -->
                                 <li class="dropdown-header">
-                                    <img src="{{asset('backend/assets/img/user/user.png')}}" class="img-circle" alt="User Image" />
+                                    <img src="{{ Auth::user()->profile_photo_url }}" class="img-circle" alt="User Image" />
                                     <div class="d-inline-block">
-                                        Abdus Salam <small class="pt-1">abdus@gmail.com</small>
+                                        {{ Auth::user()->name }} <small class="pt-1">{{ Auth::user()->email }}</small>
                                     </div>
                                 </li>
 
@@ -154,8 +154,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="email-inbox.html">
-                                        <i class="mdi mdi-email"></i> Message
+                                    <a href="{{ route('change.password') }}">
+                                        <i class="mdi mdi-email"></i> Change Password
                                     </a>
                                 </li>
                                 <li>
@@ -190,13 +190,12 @@
         <footer class="footer mt-auto">
             <div class="copyright bg-white">
                 <p>
-                    &copy; <span id="copy-year">2019</span> Copyright Sleek Dashboard Bootstrap Template by
+                    &copy; <span id="copy-year">2021</span> Copyright Letsweb Dashboard by
                     <a
                         class="text-primary"
-                        href="http://www.iamabdus.com/"
+                        href="http://www.letsweb.org/"
                         target="_blank"
-                    >Abdus</a
-                    >.
+                    >Marius</a>.
                 </p>
             </div>
             <script>
