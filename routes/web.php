@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ChangePass;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\UserProfile;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\HomeController;
@@ -119,4 +120,8 @@ Route::get('/user/logout', [BrandController::class, 'Logout'])->name('user.logou
 // Change Password and user Profile Route
 Route::get('/user/password', [ChangePass::class, 'CPassword'])->name('change.password');
 Route::post('/password/update', [ChangePass::class, 'UpdatePassword'])->name('password.update');
+
+// User Profile
+Route::get('/user/profile', [UserProfile::class, 'PUpdate'])->name('profile.update');
+Route::post('/user/profile/update', [UserProfile::class, 'UpdateProfile'])->name('update.user.profile');
 

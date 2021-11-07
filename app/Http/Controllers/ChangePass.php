@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class ChangePass extends Controller
 {
+
     public function CPassword(){
         return view('admin.body.change_password');
     }
